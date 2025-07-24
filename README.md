@@ -23,11 +23,11 @@ Nous avons appliqué GEMINI sur les données **NGC 1068** déjà bien connues, a
 
 ## Hyperparamètres clés de GEMINI
 
-- **hidden dim** : contrôle la complexité de l’espace latent où les spectres sont projetés
-- **learning rate** : règle la vitesse d’apprentissage du modèle
-- **OvO (One-vs-One)** : chaque paire de classes est distinguée individuellement par le modèle
-- **OvA (One-vs-All)** : chaque classe est distinguée de toutes les autres combinées
-- **Kernel** : fonction de pondération permettant d'estimer la distance entre distributions
+- `hidden dim` : contrôle la complexité de l’espace latent où les spectres sont projetés
+- `learning rate` : règle la vitesse d’apprentissage du modèle
+- `OvO (One-vs-One)` : chaque paire de classes est distinguée individuellement par le modèle
+- `OvA (One-vs-All)` : chaque classe est distinguée de toutes les autres combinées
+- `Kernel` : fonction de pondération permettant d'estimer la distance entre distributions
 
 ---
 
