@@ -1,1 +1,0 @@
-{"sample_size": 1079, "kernel": "poly", "n_clusters": 50, "n_labels": 9, "time": 269.0167727470398, "silhouette": 0.09364708076431942, "calinski_harabasz": 99.58558913421481, "davies_bouldin": 3.4933795521414206, "learning_rate": 0.01, "score": 57.57031392521582, "n_iter": 25, "hidden_dim": 20, "ov": true}
