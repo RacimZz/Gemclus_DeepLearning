@@ -28,7 +28,7 @@ Nous avons appliqué GEMINI sur les données **NGC 1068** déjà bien connues, a
 
 ## Hyperparamètres clés de GEMINI
 
-![Hyperparamètres de MLPMMD ](images/MLPMMD.jpg)
+![Hyperparamètres de MLPMMD ](images/MLPMMD.png)
 
 - `hidden dim` : contrôle la complexité de l’espace latent où les spectres sont projetés
 - `learning rate` : règle la vitesse d’apprentissage du modèle
@@ -49,7 +49,7 @@ Nous avons appliqué GEMINI sur les données **NGC 1068** déjà bien connues, a
 
 - **FisherEM** permet d’identifier des clusters aux formes variées, souvent mieux adaptés à la diversité réelle des spectres galactiques.
 - **L’introduction de la distance Wasserstein** dans GEMINI permet de dépasser la limitation des formes sphériques : elle prend en compte la forme globale des distributions, et facilite l’identification de groupes complexes ou “allongés”.
-![Hyperparamètres de MLPWASSERSTEIN](images/WASS.jpg)
+![Hyperparamètres de MLPWASSERSTEIN](images/WASS.png)
 
 ---
 
