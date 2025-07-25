@@ -8,6 +8,9 @@ Ce dépôt présente une exploration approfondie de l’algorithme **GEMINI** (G
 ## Objectifs
 
 - **Évaluer la performance de GEMINI** sur des données spectrales connues (galaxie NGC 1068)
+  
+![galaxie NGC 1068](images/NGC1068.jpg)
+
 - **Comparer les résultats** obtenus avec ceux issus de FisherEM, publiés récemment par Hugo et Didier
 - Analyser l’apport des distances de noyau (MMD, Wasserstein) par rapport aux méthodes traditionnelles basées sur les moyennes et distances euclidiennes
 
@@ -19,9 +22,13 @@ Parallèlement à l'utilisation de FisherEM, nous avons souhaité explorer des m
 
 Nous avons appliqué GEMINI sur les données **NGC 1068** déjà bien connues, afin de comparer objectivement ses performances et comportements à ceux de FisherEM, qui avaient fait l’objet d’une publication l’année précédente [Chambon et Al.].
 
+![Résultat sous FisherEM](images/FisherEM.jpg)
+
 ---
 
 ## Hyperparamètres clés de GEMINI
+
+![Hyperparamètres de MLPMMD ](images/MLPMMD.jpg)
 
 - `hidden dim` : contrôle la complexité de l’espace latent où les spectres sont projetés
 - `learning rate` : règle la vitesse d’apprentissage du modèle
@@ -31,18 +38,24 @@ Nous avons appliqué GEMINI sur les données **NGC 1068** déjà bien connues, a
 
 ---
 
-## Résultats et analyse
+## Résultats et analyse 
 
-- Après optimisation des hyperparamètres, nous avons pu comparer la **qualité du clustering** de GEMINI à celle de FisherEM, notamment via le **silhouette score par classe**.
-- **GEMINI** a tendance à créer des groupes assez **uniformes** (clusters “sphériques”), similaires à ceux de k-means, ce qui peut limiter la détection de structures plus complexes.
+- Après optimisation des hyperparamètres, nous avons pu comparer la **qualité du clustering** de GEMINI à celle de FisherEM, notamment via le **silhouette score par classe**, les graphes sont dans la section `figures/`.
+- **GEMINI** a tendance à créer des groupes assez **uniformes** (clusters “sphériques”), similaires à ceux de **k-means**, ce qui peut limiter la détection de structures plus complexes.
+<div style="display: flex; justify-content: space-around;">
+  <img src="images/SC_FisherEM.png" alt="Silhouette score de chaque classe de FisherEM" width="45%"/>
+  <img src="images/SC_GEMINI.png" alt="Silhouette score de chaque classe de GEMINI" width="45%"/>
+</div>
+
 - **FisherEM** permet d’identifier des clusters aux formes variées, souvent mieux adaptés à la diversité réelle des spectres galactiques.
 - **L’introduction de la distance Wasserstein** dans GEMINI permet de dépasser la limitation des formes sphériques : elle prend en compte la forme globale des distributions, et facilite l’identification de groupes complexes ou “allongés”.
+![Hyperparamètres de MLPWASSERSTEIN](images/WASS.jpg)
 
 ---
 
 ## Pour aller plus loin
 
-- Scripts d’entraînement GEMINI : voir le dossier `/py` ou [les tutoriels sur le dépôt GitHub principal de GEMINI](https://gemini-clustering.github.io/auto_examples/index.html)
+- Scripts d’entraînement GEMINI : voir le dossier `py/` ou [les tutoriels sur le dépôt GitHub principal de GEMINI](https://gemini-clustering.github.io/auto_examples/index.html)
 - Analyse et visualisation des résultats : ce dépôt contient des notebooks dédiés à l’analyse, la comparaison des clusters, et la visualisation avancée (diagrammes de Sankey, scores, etc.)
 - Résultats FisherEM : publiés et disponibles dans le dépôt associé ou sur demande
 
