@@ -1,3 +1,11 @@
+![Language](https://img.shields.io/badge/Made_with-Python-blue.svg?logo=python)
+![Research](https://img.shields.io/badge/Type-Research%20Project-blueviolet)
+![Stage](https://img.shields.io/badge/Stage-d'excellence-yellow)
+![Affiliation](https://img.shields.io/badge/Hosted_at-IPAG_Grenoble-blue)
+![DeepLearning](https://img.shields.io/badge/Package-Gemclus-orange)
+![Last Updated](https://img.shields.io/badge/Last_Update-July_2025-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 # Exploration de l’Algorithme GEMINI pour la Classification de Spectres Galactiques
 
 Ce dépôt présente une exploration approfondie de l’algorithme **GEMINI** (Generalizable EM-based Mutual Information clustering with Neural Networks) appliqué à des données spectrales d’astronomie, en complément de l’approche classique FisherEM.  
@@ -11,7 +19,7 @@ Ce dépôt présente une exploration approfondie de l’algorithme **GEMINI** (G
   
 ![galaxie NGC 1068](images/NGC1068.jpg)
 
-- **Comparer les résultats** obtenus avec ceux issus de FisherEM, publiés récemment par Hugo et Didier
+- **Comparer les résultats** obtenus avec ceux issus de FisherEM, publiés par Chambon & Fraix-Burnet, 2023. 
 - Analyser l’apport des distances de noyau (MMD, Wasserstein) par rapport aux méthodes traditionnelles basées sur les moyennes et distances euclidiennes
 
 ---
@@ -22,7 +30,7 @@ Parallèlement à l'utilisation de FisherEM, nous avons souhaité explorer des m
 
 Nous avons appliqué GEMINI sur les données **NGC 1068** déjà bien connues, afin de comparer objectivement ses performances et comportements à ceux de FisherEM, qui avaient fait l’objet d’une publication l’année précédente [Chambon et Al.].
 
-![Résultat sous FisherEM](images/FisherEM.jpg)
+<img src="images/FisherEM.jpg" alt="Résultat sous FisherEM" width="700"/>
 
 ---
 
@@ -49,6 +57,7 @@ Nous avons appliqué GEMINI sur les données **NGC 1068** déjà bien connues, a
 
 - **FisherEM** permet d’identifier des clusters aux formes variées, souvent mieux adaptés à la diversité réelle des spectres galactiques.
 - **L’introduction de la distance Wasserstein** dans GEMINI permet de dépasser la limitation des formes sphériques : elle prend en compte la forme globale des distributions, et facilite l’identification de groupes complexes ou “allongés”.
+
 ![Hyperparamètres de MLPWASSERSTEIN](images/WASS.png)
 
 ---
