@@ -6,7 +6,7 @@
 ![Last Updated](https://img.shields.io/badge/Last_Update-July_2025-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-# Exploration de l’Algorithme GEMINI pour la Classification de Spectres Galactiques
+# Exploration de l’Algorithme GEMINI pour la Classification de Spectres de galaxies
 
 Ce dépôt présente une exploration approfondie de l’algorithme **GEMINI** (Generalizable EM-based Mutual Information clustering with Neural Networks) appliqué à des données spectrales d’astronomie, en complément de l’approche classique FisherEM.  
 👉 [Lien vers GEMINI - code et documentation](https://gemini-clustering.github.io/)
@@ -49,14 +49,20 @@ Nous avons appliqué GEMINI sur les données **NGC 1068** déjà bien connues, a
 ## Résultats et analyse 
 
 - Après optimisation des hyperparamètres, nous avons pu comparer la **qualité du clustering** de GEMINI à celle de FisherEM, notamment via le **silhouette score par classe**, les graphes sont dans la section `figures/`.
-- **GEMINI** a tendance à créer des groupes assez **uniformes** (clusters “sphériques”), similaires à ceux de **k-means**, ce qui peut limiter la détection de structures plus complexes.
-<div style="display: flex; justify-content: space-around;">
+- **GEMINI** a tendance à créer des groupes assez **uniformes** (clusters “sphériques”), similaires à ceux de **k-means**, ce qui peut limiter la détection de structures plus complexes, comme on peut l'apercevoir ci dessous avec les silhouette score des classes.
+<p align="center">
   <img src="images/SS_FisherEM.png" alt="Silhouette score de chaque classe de FisherEM" width="45%"/>
   <img src="images/SS_GEMINI.png" alt="Silhouette score de chaque classe de GEMINI" width="45%"/>
-</div>
+</p>
+
+<p align="center">
+  <em>À gauche : FisherEM — À droite : GEMINI</em>
+</p>
 
 - **FisherEM** permet d’identifier des clusters aux formes variées, souvent mieux adaptés à la diversité réelle des spectres galactiques.
 - **L’introduction de la distance Wasserstein** dans GEMINI permet de dépasser la limitation des formes sphériques : elle prend en compte la forme globale des distributions, et facilite l’identification de groupes complexes ou “allongés”.
+> **À noter :** Ce travail sera poursuivi par M.Hugo Chambon.
+
 
 ![Hyperparamètres de MLPWASSERSTEIN](images/WASS.png)
 
@@ -64,9 +70,12 @@ Nous avons appliqué GEMINI sur les données **NGC 1068** déjà bien connues, a
 
 ## Pour aller plus loin
 
-- Scripts d’entraînement GEMINI : voir le dossier `py/` ou [les tutoriels sur le dépôt GitHub principal de GEMINI](https://gemini-clustering.github.io/auto_examples/index.html)
-- Analyse et visualisation des résultats : ce dépôt contient des notebooks dédiés à l’analyse, la comparaison des clusters, et la visualisation avancée (diagrammes de Sankey, scores, etc.)
-- Résultats FisherEM : publiés et disponibles dans le dépôt associé ou sur demande
+- **Scripts de lancements GEMINI** : voir le dossier `py/` ou [les tutoriels sur le dépôt GitHub principal de GEMINI](https://gemini-clustering.github.io/auto_examples/index.html)
+- **Analyse et visualisation des résultats** : ce dépôt contient un notebook dédié (`py/plot_compare_gemclus_results.ipynb`) à la comparaison des clusters, et la visualisation avancée (diagrammes de Sankey, scores ..etc)
+- **Résultats des classifications** :
+    - voir le dossier `CSV/` qui contient les résultats des classifications les plus concluentes **(aux silhouette score élevé)**
+    - voir le dossier `json/` qui contient des *.json(l)* avec les détails de toutes les classifications **(temps d'exécution, nombre de classes demandées et trouvées, les scores, les valeurs de tout les hyperparamétres)**
+> ces `.json(l)` permettre de sauvegarder en continues les classifications, et par conséquent analyser et visualiser les résultats
 
 ---
 
