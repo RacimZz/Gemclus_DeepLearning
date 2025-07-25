@@ -43,8 +43,8 @@ Nous avons appliqué GEMINI sur les données **NGC 1068** déjà bien connues, a
 - Après optimisation des hyperparamètres, nous avons pu comparer la **qualité du clustering** de GEMINI à celle de FisherEM, notamment via le **silhouette score par classe**, les graphes sont dans la section `figures/`.
 - **GEMINI** a tendance à créer des groupes assez **uniformes** (clusters “sphériques”), similaires à ceux de **k-means**, ce qui peut limiter la détection de structures plus complexes.
 <div style="display: flex; justify-content: space-around;">
-  <img src="images/SC_FisherEM.png" alt="Silhouette score de chaque classe de FisherEM" width="45%"/>
-  <img src="images/SC_GEMINI.png" alt="Silhouette score de chaque classe de GEMINI" width="45%"/>
+  <img src="images/SS_FisherEM.png" alt="Silhouette score de chaque classe de FisherEM" width="45%"/>
+  <img src="images/SS_GEMINI.png" alt="Silhouette score de chaque classe de GEMINI" width="45%"/>
 </div>
 
 - **FisherEM** permet d’identifier des clusters aux formes variées, souvent mieux adaptés à la diversité réelle des spectres galactiques.
